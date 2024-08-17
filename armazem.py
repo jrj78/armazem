@@ -135,6 +135,9 @@ def favoritos():
     return f"<h4>Comprado</h4>"
 
 ######################CATEGORIA
+@app.route("/config/categoria")
+def categoria():
+    return render_template('categoria.html', categorias = Categoria.query.all(), titulo='Categoria')
 
 @app.route("/categoria/criar", methods=['POST'])
 def criarcategoria():
@@ -154,6 +157,6 @@ def relVendas():
 def relCompras():
     return render_template('relCompras.html')
 
-if __name__ == 'armazem':
+if __name__ == "armazem.py":
     print("armazem")
     db.create_all()
