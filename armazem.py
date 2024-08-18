@@ -157,6 +157,5 @@ def relVendas():
 def relCompras():
     return render_template('relCompras.html')
 
-if __name__ == "armazem.py":
-    print("armazem")
+with app.app_context():
     db.create_all()
